@@ -13,8 +13,7 @@ This project was done in a 3 member team as a part of Natural Language Processin
 Three distinct approaches were implemented and compared:
 
 1. **Initial Approach** – A weighted ensemble combining sentence-level BiLSTM and document-level MLP.
-2. **GAN-based Approach** – A Generative Adversarial Network for adversarial feature learning.
-3. **Lightweight Approach** – A fast, interpretable, and efficient hybrid system using stylometry and traditional embeddings.
+2. **Lightweight Approach** – A fast, interpretable, and efficient hybrid system using stylometry and traditional embeddings.
 
 ---
 
@@ -28,20 +27,6 @@ Three distinct approaches were implemented and compared:
   - BiLSTM for sequential sentence-level patterns.
   - MLP for document-level semantics.
   - Weighted ensemble using a learnable parameter to balance both outputs.
-
-### ⚔ GAN-Based Architecture
-
-- **Motivation**: Capture deeper linguistic differences using adversarial learning.
-- **Pipeline**:
-  - **DistilRoBERTa** for base embeddings (frozen).
-  - **Generator** transforms embeddings for enhanced representation.
-  - **Discriminator** evaluates authenticity using:
-    - Generated embeddings
-    - Stylometric features (e.g., sentence length, type-token ratio).
-- **Training**:
-  - Adversarial loop with separate learning rates.
-  - Balanced update schedule (Discriminator : Generator = 5:1).
-  - t-SNE visualization & feature importance analysis.
 
 ###  Lightweight Detector
 
@@ -76,7 +61,6 @@ Combined and curated from multiple sources:
 | **Approach**          | **Accuracy** | **F1 Score** | **AUC-ROC** |
 |-----------------------|--------------|--------------|-------------|
 | Initial (BiLSTM+MLP)  | 0.4435       | 0.4560       | 0.4784      |
-| GAN-Based             | 0.5460       | 0.5320       | 0.5782      |
 | Lightweight Approach  | **0.6227**   | **0.6553**   | **0.6114**  |
 
 ---
@@ -84,7 +68,6 @@ Combined and curated from multiple sources:
 ##  Key Insights
 
 - **Stylometric analysis** proved highly useful in identifying AI-generated content.
-- **Strategic masking** helped the GAN generalize better.
 - The **lightweight approach** achieved the best performance with minimal computational overhead.
 
 ---
@@ -96,15 +79,7 @@ Combined and curated from multiple sources:
 - Content moderation on platforms
 - Detection of synthetic news
 - Social media trend analysis
-
----
-
-## ⚠ Limitations
-
-- GAN-based training is **computationally intensive** and **unstable**.
-- Domain generalization remains a challenge.
-- Short texts may reduce model reliability.
-
+- 
 ---
 
 ##  Technologies Used
